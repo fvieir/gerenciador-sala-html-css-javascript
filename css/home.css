@@ -1,0 +1,53 @@
+.content {
+  display: grid;
+  grid-template-rows: 11.4rem 1fr;
+  grid-template-columns: 60% 40%;
+
+  /*Criar area de ocupação de cada elemento que vai usar o grid*/
+  grid-template-areas:
+    "header header"
+    "left rigth";
+}
+
+header {
+  grid-area: header;
+}
+
+#bg {
+  grid-area: left;
+}
+
+#bg img {
+  width: 50rem;
+}
+
+main {
+  grid-area: right;
+
+  display: flex;
+  align-items: center;
+}
+
+main .container {
+  width: min(36.3rem 100%);
+}
+
+main h2 {
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  font-size: clamp(20px, 5vw, 2.8rem);
+  margin-bottom: 2.4rem;
+}
+
+input {
+  border: 0.2rem solid var(--grey-blue); /*0.2 rem é igual a 2px*/
+  padding: 0 1.6rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+}
+
+input,
+button .button {
+  margin-bottom: 3rem;
+}

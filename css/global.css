@@ -1,0 +1,111 @@
+/* Resetar configurações do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  /*criando variaveis paras cores padrão */
+  --black: #0d114f;
+  --white: #fafafa;
+  --red: #e83f5b;
+  --light-blue: #e0ecff;
+  --blue: #3485ff;
+  --backgound: #f6faff;
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
+
+  --grey-dark: #4d5e77;
+  --grey-blue: #a1b2cd;
+  --grey-ligth: #e5eaf1;
+
+  /*1rem = 16 px que é igual a 100%, como boas praticas é melhor usar o rem */
+  /* 62.5% é igual a 10px. Todo calculo do rem agora é divido por 10 ou inves de ser por 16px*/
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: var(--backgound);
+}
+
+body,
+button,
+input,
+textarea {
+  /*clamp(menor valor, valor padrão, maior valor) deixa responsivo de forma natural*/
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto; /*sem margens em cima em baixo e as laterais automático*/
+}
+
+/*Deixa o label escodido da tela, mas para os navegadores com opção de leitura de voz, continua funcionado para acessibilidade*/
+.sr-only {
+  position: absolute; /* Fica por cima de todos elementos */
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px; /*margin negativa fica para cima, assim o elemento fica escondido*/
+  overflow: hidden; /*Para não ter barra de rolagem*/
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*inputs and buttons*/
+
+button,
+input,
+.button {
+  border-radius: 0.8rem;
+  height: 5rem;
+}
+
+button,
+.button {
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue);
+  color: var(--white);
+
+  transition: 0.5s;
+
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  filter: brightness(1.2);
+}
+
+button img,
+.button img {
+  margin-right: 1rem;
+  width: 2.2rem;
+}
+
+.button.outlined,
+button.outlined {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 0.2rem solid var(--blue);
+}
+
+.content header {
+  width: 80%;
+}
+
+.content header img {
+}
